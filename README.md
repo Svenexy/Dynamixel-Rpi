@@ -1,87 +1,43 @@
 # Dynamixel-Rpi
 
-One Paragraph of project description goes here
+This library is for communication with the Dynamixel AX12-A (i dont know for the other series!)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+First of al we need to change some config settings in the Raspberry Pi
 
-### Prerequisites
+### UART AND CORE_FREQ
 
-What things you need to install the software and how to install them
-
+Open the terminal on the raspberry and run this command:
 ```
-Give examples
+sudo nano /boot/config.txt
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+After that you need to add this in the file:
 ```
-Give the example
+#AX12-A
+init_uart_clock=16000000
+enable_uart=1
 ```
-
-And repeat
-
+This is for enabling the serial port of the Raspberry at a baudrate of 16000000.
+But the Raspberry loves to change his core frequency and with that he is also changing the baudrate to fix this at under arm_freq=800:
 ```
-until finished
+core_freq=400
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Press CTRL-X and say YES, and Reboot
 
-## Running the tests
+### Set other parameters
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+Run this command:
 ```
-Give an example
+sudo stty -F /dev/ttyAMA0 1000000
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
+Edit /boot/cmdline.txt and remove all options mentioning ttyAMA0.
+Edit /etc/inittab and comment out any lines mentioning ttyAMA0, especially the getty one.
+command to use for this is:
 ```
-Give an example
+sudo nano *filemane*
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+and reboot again!
