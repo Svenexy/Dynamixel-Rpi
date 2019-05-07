@@ -41,3 +41,8 @@ sudo nano *filemane*
 ```
 
 and **Reboot** again!
+
+### Schematic
+
+The pdf file is the circuit you neet to use to comminucate with the AX12-A becuase the servo's use half-duplex communication and raspberry full-duplex. raspberry likes 3.3V and the servo's 5V.
+With this cicuit we solve all these problems!
