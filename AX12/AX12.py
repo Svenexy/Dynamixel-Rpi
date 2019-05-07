@@ -123,7 +123,7 @@ class Ax12:
     LEFT = 0
     RIGTH = 1
     RX_TIME_OUT = 10
-    TX_DELAY_TIME = 0.0001
+    TX_DELAY_TIME = 0.00002
 
     # RPi constants
     RPI_DIRECTION_PIN = 18
