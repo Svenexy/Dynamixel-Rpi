@@ -1,6 +1,6 @@
 # Dynamixel-Rpi
 
-This library is for communication with the Dynamixel AX12-A (i dont know for the other series!)
+This library is for communication with the Dynamixel AX12-A (i dont know for the other Dynamixel series!)
 
 ## Getting Started
 
