@@ -24,7 +24,7 @@ But the Raspberry loves to change his core frequency and with that he is also ch
 core_freq=400
 ```
 
-Press CTRL-X and say YES, and Reboot
+Press CTRL-X and say YES, and **Reboot**
 
 ### Set other parameters
 
@@ -40,4 +40,4 @@ command to use for this is:
 sudo nano *filemane*
 ```
 
-and reboot again!
+and **Reboot** again!
