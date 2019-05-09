@@ -110,7 +110,7 @@ It is a moving speed to Goal Position.
 The range and the unit of the value may vary depending on the operation mode.
 
 * Join Mode </br>
-0~1023 can be used, and the unit is about 0.111rpm. </br>
+0 ~ 1023 can be used, and the unit is about 0.111rpm. </br>
 If it is set to 0, it means the maximum rpm of the motor is used without controlling the speed. </br>
 If it is 1023, it is about 114rpm. </br>
 For example, if it is set to 300, it is about 33.3 rpm.
@@ -118,9 +118,9 @@ For example, if it is set to 300, it is about 33.3 rpm.
 *Notes: Please check the maximum rpm of relevant model in Joint Mode.  Even if the motor is set to more than maximum rpm, it cannot generate the torque more than the maximum rpm.*
 
 * Wheel Mode </br>
-0~2047 can be used, the unit is about 0.1%. </br>
-If a value in the range of 0~1023 is used, it is stopped by setting to 0 while rotating to CCW direction. </br>
-If a value in the range of 1024~2047 is used, it is stopped by setting to 1024 while rotating to CW direction. </br>
+0 ~ 2047 can be used, the unit is about 0.1%. </br>
+If a value in the range of 0 ~ 1023 is used, it is stopped by setting to 0 while rotating to CCW direction. </br>
+If a value in the range of 1024 ~ 2047 is used, it is stopped by setting to 1024 while rotating to CW direction. </br>
 That is, the 10th bit becomes the direction bit to control the direction. </br>
 In Wheel Mode, only the output control is possible, not speed. </br>
 For example, if it is set to 512, it means the output is controlled by 50% of the maximum output.
@@ -206,7 +206,7 @@ Data value is identical to the actual temperature in Celsius. For example, if th
 readPosition(self, id)
 ```
 It is the current position value of Dynamixel. <br />  
-The range of the value is 0~1023, and the unit is 0.29 degree.
+The range of the value is 0 ~ 1023, and the unit is 0.29 degree.
 ```
 readVoltage(self, id)
 ```
@@ -214,15 +214,15 @@ This value is 10 times larger than the actual voltage. For example, when 10V is 
 ```
 readSpeed(self, id)
 ```
-If a value is in the rage of 0~1023, it means that the motor rotates to the CCW direction.<br />
-If a value is in the rage of 1024~2047, it means that the motor rotates to the CW direction.
+If a value is in the rage of 0 ~ 1023, it means that the motor rotates to the CCW direction.<br />
+If a value is in the rage of 1024 ~ 2047, it means that the motor rotates to the CW direction.
 ```
 readLoad(self, id)
 ```
 It means currently applied load. <br />
-The range of the value is 0~2047, and the unit is about 0.1%. <br />
-If the value is 0~1023, it means the load works to the CCW direction. <br />
-If the value is 1024~2047, it means the load works to the CW direction. <br />
+The range of the value is 0 ~ 2047, and the unit is about 0.1%. <br />
+If the value is 0 ~ 1023, it means the load works to the CCW direction. <br />
+If the value is 1024 ~ 2047, it means the load works to the CW direction. <br />
 That is, the 10th bit becomes the direction bit to control the direction, and 1024 is equal to 0. <br />
 For example, the value is 512, it means the load is detected in the direction of CCW about 50% of the maximum torque.
 ```
