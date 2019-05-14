@@ -42,6 +42,17 @@ sudo nano *filemane*
 
 and **Reboot** again!
 
+We also need to disable Bluetooth on boot.
+```
+echo "dtoverlay=pi3-disable-bt" | sudo tee -a /boot/config.txt
+```
+Disable systemd service that initializez Bluetooth Modems connected by UART.
+```
+sudo systemctl disable hciuart
+```
+and **Reboot** again!
+
+
 ### Schematic
 
 The pdf file is the circuit you need to use to communicate with the AX12-A because the servo's use half-duplex communication and raspberry full-duplex. raspberry likes 3.3V and the servo's 5V.
